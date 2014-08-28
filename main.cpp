@@ -17,33 +17,6 @@ int main()
                 window.close ();
             else if (ev.type == sf::Event::Closed)
                 window.close ();
-            else if (ev.type == sf::Event::KeyPressed)
-            {
-                switch (ev.key.code)
-                {
-                case sf::Keyboard::Up:
-                    grid.inputKey ('U');
-                    break;
-
-                case sf::Keyboard::Right:
-                    grid.inputKey ('R');
-                    break;
-
-                case sf::Keyboard::Down:
-                    grid.inputKey ('D');
-                    break;
-
-                case sf::Keyboard::Left:
-                    grid.inputKey ('L');
-                    break;
-
-                case sf::Keyboard::R:
-                    grid.inputKey ('S');
-                    break;
-                default:
-                    break;
-                }
-            }
         }
 
         grid.updateSnake();

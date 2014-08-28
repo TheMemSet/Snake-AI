@@ -234,51 +234,7 @@ bool Grid::fruitOnRemove (Segment seg)
 
 void Grid::inputKey (char key)
 {
-    switch (key)
-    {
-    case 'U':
-        if (snake [0].next != down)
-        {
-            snake [0].next = up;
-        }
-        break;
 
-    case 'R':
-        if (snake [0].next != left)
-        {
-            snake [0].next = right;
-        }
-        break;
-
-    case 'D':
-        if (snake [0].next != up)
-        {
-            snake [0].next = down;
-        }
-        break;
-
-    case 'L':
-        if (snake [0].next != right)
-        {
-            snake [0].next = left;
-        }
-        break;
-
-    case 'S': // As in, "Start over"
-        reset();
-        break;
-
-    case 'A': // As in, "Accelerate"
-        speed++;
-        break;
-
-    case 'E': // As in, "Exit"
-        alive = false;
-        break;
-
-    default:
-        exit (1001);
-    }
 }
 
 void Grid::addFruit()
