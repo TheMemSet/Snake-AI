@@ -6,6 +6,8 @@ Grid::Grid (uint8_t gridWidth_in, uint8_t gridHeight_in) : alive (true)
     gridHeight = gridHeight_in;
     gridWidth  = gridWidth_in;
 
+    moves = 0;
+
     vertArray.setPrimitiveType (sf::Quads);
 
     srand (time (NULL));
@@ -39,6 +41,7 @@ void Grid::reset()
     fruit.clear();
     alive = true;
     score = 0;
+    moves = 0;
 
     for (uint8_t i = 0;i < 5;++i)
     {
@@ -53,6 +56,40 @@ void Grid::updateSnake()
     if (!alive)
     {
         return;
+    }
+
+    std::vector <std::pair <int, int>> vectSnake, vectFruit;
+
+    vectSnake.resize (snake.size());
+    vectFruit.resize (fruit.size());
+
+    for (int i = 0;i < snake.size();i++)
+    {
+        vectSnake [i] = std::make_pair ((int)snake [i].x, (int)snake [i].y);
+    }
+
+    for (int i = 0;i < fruit.size();i++)
+    {
+        vectFruit [i] = std::make_pair ((int)fruit [i].x, (int)fruit [i].y);
+    }
+
+    char dir = AIRijad.update (vectSnake, vectFruit);
+
+    if (dir == 'U')
+    {
+        snake [0].next = up;
+    }
+    else if (dir == 'R')
+    {
+        snake [0].next = right;
+    }
+    else if (dir == 'D')
+    {
+        snake [0].next = down;
+    }
+    else if (dir == 'L')
+    {
+        snake [0].next = left;
     }
 
     snake [0].x += offX [snake [0].next];
@@ -87,11 +124,18 @@ void Grid::updateSnake()
 
     if (fruitOn (snake [0]))
     {
-        score += speed;
+        score++;
         addFruit();
     }
 
+    moves++;
+
     alive = !testForCollision();
+
+    if (score >= 50)
+    {
+        alive = false;
+    }
 }
 
 bool Grid::testForCollision() const

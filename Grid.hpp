@@ -60,7 +60,7 @@ class Grid : public sf::Drawable
     std::vector     <Segment> snake;
     std::vector     <Segment> fruit;
     sf::VertexArray vertArray;
-    uint32_t        score = 0;
+
     uint16_t        speed = 8; // 8 blocks per second
 
     bool    addSegment; //
@@ -76,6 +76,9 @@ class Grid : public sf::Drawable
     bool         fruitOnRemove (Segment seg);
     bool         snakeOn (Segment seg) const;
 
+    AI           AIRijad;
+
+
 public:
 
     Grid     (uint8_t gridWidth, uint8_t gridHeight);
@@ -85,6 +88,9 @@ public:
     bool     isAlive() const;
     void     inputKey (char);
     void     terminate();
+
+    uint32_t moves = 0;
+    uint32_t score = 0;
 };
 
 #endif // GRID_HPP_INCLUDED

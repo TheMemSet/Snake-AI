@@ -7,7 +7,7 @@
 class AI
 {
 public:
-    void update (std::vector <std::pair <int, int>>&,std::vector <std::pair <int, int>>&);
+    char update (std::vector <std::pair <int, int>>&snake,std::vector <std::pair <int, int>>&fruit);
 };
 
 #endif // AI_HPP_INCLUDED

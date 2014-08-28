@@ -9,7 +9,7 @@ int main()
 
     Grid grid (64, 36);
 
-    while (window.isOpen ())
+    while (window.isOpen () && grid.isAlive())
     {
         while (window.pollEvent (ev))
         {
@@ -53,5 +53,7 @@ int main()
         window.draw (grid);
         window.display ();
     }
+    std::cout << grid.score << " " << grid.moves;
+
     return 0;
 }
