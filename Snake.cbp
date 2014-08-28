@@ -45,6 +45,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="AI.hpp" />
 		<Unit filename="Grid.cpp" />
 		<Unit filename="Grid.hpp" />
 		<Unit filename="main.cpp" />
