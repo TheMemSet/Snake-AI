@@ -352,7 +352,7 @@
 	<utility>
 	<vector>
 
-1409256923 source:c:\users\rijad\documents\github\snake-ai\grid.cpp
+1409309415 source:c:\users\rijad\documents\github\snake-ai\grid.cpp
 	"Grid.hpp"
 	<cstdlib>
 
@@ -698,10 +698,18 @@
 	<string>
 	<vector>
 
-1409256923 c:\users\rijad\documents\github\snake-ai\ai.hpp
+1409309415 c:\users\rijad\documents\github\snake-ai\ai.hpp
 	<utility>
 	<vector>
+	<cstdlib>
+	<ctime>
+	<cstdio>
+	<algorithm>
+	<queue>
 
-1409256923 source:c:\users\rijad\documents\github\snake-ai\main.cpp
+1409309630 source:c:\users\rijad\documents\github\snake-ai\main.cpp
 	"Grid.hpp"
+
+1409309750 source:c:\users\rijad\documents\github\snake-ai\ai.cpp
+	"AI.hpp"
 

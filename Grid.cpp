@@ -132,10 +132,10 @@ void Grid::updateSnake()
 
     alive = !testForCollision();
 
-    if (score >= 50)
-    {
-        alive = false;
-    }
+//    if (score >= 50)
+//    {
+//        alive = false;
+//    }
 }
 
 bool Grid::testForCollision() const

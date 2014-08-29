@@ -3,7 +3,7 @@
 int main()
 {
     sf::RenderWindow window (sf::VideoMode (1280, 720), "Temporary title");
-    window.setFramerateLimit (10);
+    window.setFramerateLimit (1000);
 
     sf::Event ev;
 
